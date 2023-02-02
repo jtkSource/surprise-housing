@@ -41,119 +41,51 @@ Files:
 ## Conclusions
 
 ### Optimal Lambda Value
-  - Ridge regression: 6.0
-  - Lasso regression: 250 
+  - Ridge regression: 0.7
+  - Lasso regression: 0.0010 
 
 ### Significant Variables (Top 10)
 
 #### **Ridge regression**
 
 _Positive Correlation_
-- GrLivArea Above grade (ground) living area square feet
-- Neighborhood - NoRidge
-- TotRmsAbvGrd 10 Total rooms above grade (does not include bathrooms)
-- 1stFlrSF - First Floor square feet
-- Neighborhood - NridgHt
+
+- GrLivArea - Above grade (ground) living area square feet
+- MSZoning - Identifies the general zoning classification of the sale
+  - FV Floating Village Residential
+  - RL Residential Low Density
+  - RH Residential High Density
+  - RM Residential Medium Density
 
 _Negative Correlation_
 
-- KitchenQual - Average Kitchen quality
-- BsmtQual_TA - Average height of the basement
-- KitchenQual - Good Kitchen quality
-- FullBath  - Only 1 Full bathrooms above grade
-- BsmtQual - Good height of the basement
+- HeatingQC - Poor Heating quality and condition
+- Exterior1st - Brick Common Exterior covering on house
+- Fireplaces - Number of fireplaces 3
+- BedroomAbvGr - Number of Bedroom above grade 1
+- MSSubClass - Identifies the type of dwelling involved in the sale
+  - 160 - 2-STORY PUD - 1946 & NEWER
+
 
 #### **Lasso regression**
 
 _Positive Correlation_
-- GrLivArea Above grade (ground) living area square feet
+
+- GrLivArea - Above grade (ground) living area square feet
 - OverallQual - Very Good overall material and finish of the house
-- FullBath 3 Full bathrooms above grade
+- Neighborhood - Crawfor
 - Neighborhood - NridgHt
-- GarageCars Size of garage for 3 cars capacity 
+- MSZoning - Identifies the general zoning classification of the sale
+  - FV - Floating Village Residential
 
 _Negative Correlation_
 
-- KitchenQual - Average Kitchen quality
-- RemodAdd_Yrs - Years since renovation
-- KitchenQual - Good Kitchen quality
-- OverallCond - Overall condition of the house Low
-- GarageType  - No Garage
-
-
-## Lasso Regression
-The model created with Lasso regression, selected features that gave an r2 score:
-- r2 for training data: 0.86
-- r2 for test data: 0.85
-  72 features where selected as a result using the Lasso Regression with a hyperparameter of 250
-The coefficient sign explain whether the independent variables are positively correlated, 
-i.e. The  with increase in variable value there is an increase in Sales price
-or negatively correlated i.e. with the increase in the variable value there is a decrease in Sales Price
-
-**Positive correlation**
-
-    - BedroomAbvGr 3/4 Bedrooms above grade 3 and 4
-    - BsmtExposure Gd - Good Basement Exposure
-    - BsmtFinType1 BLQ/GLQ - Below Average / Good Living Quarters
-    - BsmtFullBath 1 - 1 basement full bathrooms
-    - Exterior1st BrkFace/Plywood - Exterior covering on house
-    - FireplaceQu Gd/ TA - Good to Average Fireplace quality
-    - Fireplaces 2 - Number of fireplaces
-    - Foundation PConc - Type of foundation Poured Concrete
-    - FullBath 3 Full bathrooms above grade
-    - GarageCars 3 Size of garage in car capacity
-    - GarageType Attchd Garage location Attached to home
-    - GrLivArea: Above grade (ground) living area square feet
-    - HouseStyle 1Story	Style of dwelling One story
-    - LotConfig CulDSac Lot configuration
-    - LotShape IR2	Moderately Irregular shape of property
-    - MSSubClass 60 Identifies the type of dwelling involved in the sale
-    - MSZoning FV/RL - Identifies the general zoning classification of the sale.
-        - Floating Village Residential
-        - Residential Low Density
-    - Neighborhood Brookside/Crawford/Northridge/Northridge Heights/Stone Brook - Physical locations within Ames city limits
-    - OverallQual (8-10) Rates the overall material and finish of the house
-        - Very Good to Excellent
-    - RoofStyle_Hip Type of roof
-    - TotRmsAbvGrd 10 Total rooms above grade (does not include bathrooms)
-    - WoodDeckSF Wood deck area in square feet
-
-
-**Negative correlation**
-
-
-    - BsmtExposure No / NA  - when there is no basement exposure
-    - BsmtFinType1 Unf / NA - when unfinished basement or no basement
-    - BsmtQual Fa/Gd/NA/TA - when basement Fair/Good/TA or not available
-    - Built_Yrs - year of construction
-    - ExterQual TA - Average quality of the material used for the exterior
-    - Exterior1st HdBoard - Exterior covering on house is Hard Board
-    - Exterior2nd Stucco/Wd Sdng (Wood Siding) - Exterior covering on house (if more than one material)
-    - FireplaceQu NA - No Fireplace quality
-    - FullBath 1 - Full bathrooms above grade
-    - GarageCars 1 - Size of garage in car capacity
-    - GarageFinish NA/RFn/Unf - Interior finish of the garage NA/Rough Finished/ Unfinished
-    - GarageType NA - No Garage
-    - HeatingQC Fa/Gd/TA - Fair/Good/Average Heating quality and condition
-    - KitchenQual Fa/Gd/TA - Fair/Good/Average Kitchen quality
-    - LotConfig Inside - Lot Configuration
-    - LotShape Reg	- Regular	shape of property
-    - MSSubClass - Identifies the type of dwelling involved in the sale
-        - 1-STORY PUD (Planned Unit Development) - 1946 & NEWER
-        - 2-STORY PUD - 1946 & NEWER
-        - DUPLEX - ALL STYLES AND AGES
-        - 1-STORY 1945 & OLDER
-    - MSZoning RM - Identifies the general zoning classification of the sale
-        - Residential Medium Density
-    - Neighborhood Edwards/NAmes/OldTown - Physical locations within Ames city limits
-    - OverallCond (1-4) Rates the overall condition of the house
-        - Very Poor to Below Average
-    - OverallQual (1-4) Rates the overall material and finish of the house
-        - Very Poor to Below Average
-    - RemodAdd_Yrs years since Remodel date
-    - RoofStyle Gable - Type of roof
-    - TotRmsAbvGrd 5 - Total rooms above grade (does not include bathrooms)
-
+- GarageType - No Garage
+- OverallCond - Low overall condition of the house
+- RemodAdd_Yrs - Number of years since renovation
+- MSSubClass - Identifies the type of dwelling involved in the sale
+  - 30 - 1-STORY 1945 & OLDER
+- OverallQual - Low overall material and finish of the house
 
 
 ## Technologies Used
