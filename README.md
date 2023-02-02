@@ -87,6 +87,16 @@ _Negative Correlation_
   - 30 - 1-STORY 1945 & OLDER
 - OverallQual - Low overall material and finish of the house
 
+As we prefer to use the Lasso regression as we can model on a fewer features.
+
+## Business Recommendation 
+> The model suggests that there is a positive co-relation for the 
+> Living area of the house as the primary concern followed by the build quality of the house.
+> The location of the house also plays a very important role
+> 
+> There is also a negative correlation for houses with no garage feature and having low overall 
+> condition of the house.  Houses that are not renovated for a long time tend to fetch lower prices along with houses that
+> are very old 
 
 ## Technologies Used
 - pandas - 1.4.4
