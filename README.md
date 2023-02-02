@@ -40,6 +40,48 @@ Files:
 
 ## Conclusions
 
+### Optimal Lambda Value
+  - Ridge regression: 6.0
+  - Lasso regression: 250 
+
+### Significant Variables (Top 10)
+
+#### **Ridge regression**
+
+_Positive Correlation_
+- GrLivArea Above grade (ground) living area square feet
+- Neighborhood - NoRidge
+- TotRmsAbvGrd 10 Total rooms above grade (does not include bathrooms)
+- 1stFlrSF - First Floor square feet
+- Neighborhood - NridgHt
+
+_Negative Correlation_
+
+- KitchenQual - Average Kitchen quality
+- BsmtQual_TA - Average height of the basement
+- KitchenQual - Good Kitchen quality
+- FullBath  - Only 1 Full bathrooms above grade
+- BsmtQual - Good height of the basement
+
+#### **Lasso regression**
+
+_Positive Correlation_
+- GrLivArea Above grade (ground) living area square feet
+- OverallQual - Very Good overall material and finish of the house
+- FullBath 3 Full bathrooms above grade
+- Neighborhood - NridgHt
+- GarageCars Size of garage for 3 cars capacity 
+
+_Negative Correlation_
+
+- KitchenQual - Average Kitchen quality
+- RemodAdd_Yrs - Years since renovation
+- KitchenQual - Good Kitchen quality
+- OverallCond - Overall condition of the house Low
+- GarageType  - No Garage
+
+
+## Lasso Regression
 The model created with Lasso regression, selected features that gave an r2 score:
 - r2 for training data: 0.86
 - r2 for test data: 0.85
